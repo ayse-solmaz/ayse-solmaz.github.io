@@ -1,0 +1,450 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ayşe Nur Solmaz</title>
+<meta name="description" content="Ayşe Nur Solmaz — yapay zeka mühendisi. LLM'ler, ajanlar, Türkçe NLP ve MCP sunucuları üzerine projeler.">
+<meta property="og:title" content="Ayşe Nur Solmaz">
+<meta property="og:description" content="LLM'ler, ajanlar ve Türkçe NLP üzerine çalışan yapay zeka mühendisi.">
+<meta property="og:image" content="https://avatars.githubusercontent.com/u/120752957?v=4">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23c2410c'/><text x='50' y='68' font-size='52' text-anchor='middle' fill='white' font-family='Georgia,serif'>A</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf8f5;
+    --surface: #ffffff;
+    --text: #1c1917;
+    --muted: #6b635c;
+    --line: #e7e2dc;
+    --accent: #c2410c;
+    --accent-soft: #fdeee6;
+    --chip: #f3efea;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #151311;
+      --surface: #1d1a17;
+      --text: #f2ede7;
+      --muted: #a39a90;
+      --line: #2f2a25;
+      --accent: #fb8a4c;
+      --accent-soft: #2c1d14;
+      --chip: #26221e;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #151311;
+    --surface: #1d1a17;
+    --text: #f2ede7;
+    --muted: #a39a90;
+    --line: #2f2a25;
+    --accent: #fb8a4c;
+    --accent-soft: #2c1d14;
+    --chip: #26221e;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font: 16px/1.65 Inter, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  .wrap { max-width: 880px; margin: 0 auto; padding: 0 16px; }
+
+  /* language toggle: show only the active language */
+  html[lang="tr"] [lang="en"], html[lang="en"] [lang="tr"] { display: none; }
+
+  header.top {
+    position: sticky; top: 0; z-index: 10;
+    background: color-mix(in srgb, var(--bg) 88%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  header.top .wrap { display: flex; align-items: center; justify-content: space-between; height: 56px; gap: 12px; }
+  .brand { font-family: Fraunces, Georgia, serif; font-weight: 600; text-decoration: none; font-size: 18px; }
+  nav.links { display: flex; gap: 20px; font-size: 14px; color: var(--muted); }
+  nav.links a { text-decoration: none; }
+  nav.links a:hover { color: var(--text); }
+  .toggles { display: flex; gap: 6px; }
+  .toggles button {
+    font: 500 12px/1 "JetBrains Mono", monospace;
+    background: var(--chip); color: var(--text);
+    border: 1px solid var(--line); border-radius: 8px;
+    padding: 7px 9px; cursor: pointer;
+  }
+  .toggles button:hover { border-color: var(--accent); }
+  @media (max-width: 640px) { nav.links { display: none; } }
+
+  .hero { padding: 88px 0 64px; }
+  .hero .row { display: flex; gap: 28px; align-items: center; }
+  .hero img { width: 96px; height: 96px; border-radius: 50%; border: 3px solid var(--surface); box-shadow: 0 0 0 1px var(--line); flex: none; }
+  .eyebrow { font: 500 13px "JetBrains Mono", monospace; color: var(--accent); letter-spacing: .02em; margin: 0 0 8px; }
+  h1 {
+    font-family: Fraunces, Georgia, serif; font-weight: 600;
+    font-size: clamp(36px, 7vw, 56px); line-height: 1.05; margin: 0;
+    letter-spacing: -0.02em;
+  }
+  .lead { font-size: 19px; color: var(--muted); max-width: 640px; margin: 24px 0 28px; }
+  .lead strong { color: var(--text); font-weight: 500; }
+  .socials { display: flex; flex-wrap: wrap; gap: 10px; }
+  .socials a {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 9px 14px; border-radius: 10px;
+    background: var(--surface); border: 1px solid var(--line);
+    text-decoration: none; font-size: 14px; font-weight: 500;
+    transition: border-color .15s, transform .15s;
+  }
+  .socials a:hover { border-color: var(--accent); transform: translateY(-1px); }
+  .socials svg { width: 16px; height: 16px; fill: currentColor; }
+  @media (max-width: 560px) {
+    .hero { padding-top: 56px; }
+    .hero .row { flex-direction: column; align-items: flex-start; gap: 18px; }
+    .hero img { width: 76px; height: 76px; }
+  }
+
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; margin-bottom: 72px; }
+  .stats div { background: var(--surface); padding: 18px 20px; }
+  .stats b { display: block; font-family: Fraunces, Georgia, serif; font-size: 28px; font-weight: 600; }
+  .stats span { font-size: 13px; color: var(--muted); }
+  @media (max-width: 640px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+
+  section { margin-bottom: 80px; scroll-margin-top: 72px; }
+  h2 { font-family: Fraunces, Georgia, serif; font-weight: 600; font-size: 28px; margin: 0 0 6px; letter-spacing: -0.01em; }
+  .sub { color: var(--muted); margin: 0 0 28px; }
+
+  .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  @media (max-width: 700px) { .grid { grid-template-columns: 1fr; } }
+  .card {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 14px;
+    padding: 22px; display: flex; flex-direction: column;
+    transition: border-color .15s, transform .15s;
+  }
+  .card:hover { border-color: color-mix(in srgb, var(--accent) 50%, var(--line)); transform: translateY(-2px); }
+  .card .kind { font: 500 11px "JetBrains Mono", monospace; text-transform: uppercase; letter-spacing: .06em; color: var(--accent); margin-bottom: 8px; }
+  .card h3 { margin: 0 0 8px; font-size: 18px; font-weight: 600; line-height: 1.3; }
+  .card p { margin: 0 0 16px; color: var(--muted); font-size: 15px; flex: 1; }
+  .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+  .tags span { font: 12px "JetBrains Mono", monospace; background: var(--chip); padding: 3px 8px; border-radius: 6px; color: var(--muted); }
+  .card .actions { display: flex; flex-wrap: wrap; gap: 14px; font-size: 14px; font-weight: 500; }
+  .card .actions a { text-decoration: none; color: var(--accent); }
+  .card .actions a:hover { text-decoration: underline; }
+  .card.wide { grid-column: 1 / -1; background: linear-gradient(135deg, var(--accent-soft), var(--surface) 60%); }
+
+  .list { border-top: 1px solid var(--line); }
+  .list a {
+    display: grid; grid-template-columns: 220px 1fr auto; gap: 16px; align-items: baseline;
+    padding: 14px 4px; border-bottom: 1px solid var(--line); text-decoration: none;
+  }
+  .list a:hover { background: var(--surface); }
+  .list .name { font: 500 14px "JetBrains Mono", monospace; }
+  .list .desc { color: var(--muted); font-size: 15px; }
+  .list .lang { font-size: 12px; color: var(--muted); }
+  @media (max-width: 640px) {
+    .list a { grid-template-columns: 1fr auto; }
+    .list .desc { grid-column: 1 / -1; grid-row: 2; }
+  }
+
+  .skills { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  @media (max-width: 700px) { .skills { grid-template-columns: 1fr; } }
+  .skills div { border-left: 2px solid var(--accent); padding: 2px 0 2px 16px; }
+  .skills h4 { margin: 0 0 6px; font-size: 15px; }
+  .skills p { margin: 0; color: var(--muted); font-size: 14px; }
+
+  .contact {
+    background: var(--surface); border: 1px solid var(--line); border-radius: 18px;
+    padding: 40px 32px; text-align: center;
+  }
+  .contact p { color: var(--muted); max-width: 520px; margin: 8px auto 24px; }
+  .contact .socials { justify-content: center; }
+
+  footer { padding: 32px 0 48px; color: var(--muted); font-size: 13px; text-align: center; }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#">ayşe nur solmaz</a>
+    <nav class="links">
+      <a href="#projeler"><span lang="tr">Projeler</span><span lang="en">Projects</span></a>
+      <a href="#diger"><span lang="tr">Diğer işler</span><span lang="en">More work</span></a>
+      <a href="#yetenekler"><span lang="tr">Odak</span><span lang="en">Focus</span></a>
+      <a href="#iletisim"><span lang="tr">İletişim</span><span lang="en">Contact</span></a>
+    </nav>
+    <div class="toggles">
+      <button id="langBtn" aria-label="Dili değiştir / Switch language">EN</button>
+      <button id="themeBtn" aria-label="Tema değiştir / Toggle theme">◐</button>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <div class="hero">
+    <div class="row">
+      <img src="https://avatars.githubusercontent.com/u/120752957?v=4" alt="Ayşe Nur Solmaz">
+      <div>
+        <p class="eyebrow">
+          <span lang="tr">// yapay zeka mühendisi</span><span lang="en">// ai engineer</span>
+        </p>
+        <h1>Ayşe Nur Solmaz</h1>
+      </div>
+    </div>
+    <p class="lead">
+      <span lang="tr">Dil modellerini <strong>sıfırdan eğitiyor</strong>, Türkçe için <strong>ince ayar deneyleri</strong> yapıyor ve LLM'leri gerçek işe yarayan <strong>ajanlara ve araçlara</strong> dönüştürüyorum. Projelerimin çoğu açık kaynak; modellerim Hugging Face'te.</span>
+      <span lang="en">I <strong>train language models from scratch</strong>, run <strong>fine-tuning experiments for Turkish</strong>, and turn LLMs into <strong>agents and tools</strong> that do real work. Most of my projects are open source, and my models live on Hugging Face.</span>
+    </p>
+    <div class="socials">
+      <a href="https://github.com/ayse-solmaz" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M12 .5a12 12 0 0 0-3.8 23.4c.6.1.8-.3.8-.6v-2c-3.3.7-4-1.6-4-1.6-.6-1.4-1.4-1.8-1.4-1.8-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.7-.3-5.5-1.3-5.5-6 0-1.2.5-2.3 1.3-3.1-.2-.4-.6-1.6.1-3.2 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17.3 4.6 18.3 5 18.3 5c.7 1.6.2 2.8.1 3.2.8.8 1.3 1.9 1.3 3.1 0 4.6-2.8 5.6-5.5 5.9.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6A12 12 0 0 0 12 .5Z"/></svg>
+        GitHub
+      </a>
+      <a href="https://www.linkedin.com/in/ayse-solmaz" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M20.4 20.5h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.3V9h3.4v1.6h.1c.5-.9 1.6-1.8 3.4-1.8 3.6 0 4.3 2.4 4.3 5.5v6.2ZM5.3 7.4a2.1 2.1 0 1 1 0-4.2 2.1 2.1 0 0 1 0 4.2ZM7.1 20.5H3.5V9h3.6v11.5ZM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6c0 .9.8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V1.7C24 .8 23.2 0 22.2 0Z"/></svg>
+        LinkedIn
+      </a>
+      <a href="https://www.kaggle.com/aysenursolmaz" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24"><path d="M18.8 23.6c0 .3-.1.4-.4.4h-3c-.2 0-.4-.1-.5-.3l-5-6.4-1.4 1.3v5c0 .3-.1.4-.4.4H5.8c-.3 0-.4-.1-.4-.4V.4c0-.3.1-.4.4-.4h2.3c.3 0 .4.1.4.4v14.3l6.1-6.2c.2-.2.4-.3.5-.3h3.1c.2 0 .3.1.3.2s0 .2-.1.3l-6.4 6.2 6.7 8.4.1.3Z"/></svg>
+        Kaggle
+      </a>
+      <a href="https://huggingface.co/ayse-solmaz" target="_blank" rel="noopener">
+        <span aria-hidden="true">🤗</span>
+        Hugging Face
+      </a>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div><b>28</b><span lang="tr">açık kaynak repo</span><span lang="en">open-source repos</span></div>
+    <div><b>10+</b><span lang="tr">yayınlanmış model</span><span lang="en">published models</span></div>
+    <div><b>3</b><span lang="tr">canlı demo</span><span lang="en">live demos</span></div>
+    <div><b>2022</b><span lang="tr">'den beri GitHub'da</span><span lang="en">on GitHub since</span></div>
+  </div>
+
+  <section id="projeler">
+    <h2><span lang="tr">Öne çıkan projeler</span><span lang="en">Featured projects</span></h2>
+    <p class="sub"><span lang="tr">En çok emek verdiğim ve en çok şey öğrendiğim işler.</span><span lang="en">The work I put the most into — and learned the most from.</span></p>
+
+    <div class="grid">
+      <article class="card wide">
+        <div class="kind"><span lang="tr">Araştırma · Türkçe NLP</span><span lang="en">Research · Turkish NLP</span></div>
+        <h3><span lang="tr">Türkçe küçük modellerde LoRA'yı nereye koymalı?</span><span lang="en">Where should LoRA go in small Turkish models?</span></h3>
+        <p>
+          <span lang="tr">Qwen2.5-0.5B üzerinde kontrollü bir deney: LoRA'nın hangi katmanlara ve hangi rank ile eklendiğinin Türkçe talimat takibine, unutmaya ve öğrenmenin modelin neresinde gerçekleştiğine etkisi. 8 LoRA adapter'ı ve tam fine-tuning karşılaştırması.</span>
+          <span lang="en">A controlled ablation on Qwen2.5-0.5B: how LoRA placement and rank affect Turkish instruction following, forgetting, and where learning actually happens in the network. Eight LoRA adapters compared against full fine-tuning.</span>
+        </p>
+        <div class="tags"><span>PyTorch</span><span>PEFT / LoRA</span><span>Qwen2.5</span><span>ablation</span></div>
+        <div class="actions">
+          <a href="https://github.com/ayse-solmaz/turkish-lora-layers" target="_blank" rel="noopener">GitHub →</a>
+          <a href="https://huggingface.co/collections/ayse-solmaz/turkish-lora-placement-study-6ada38f915d1e48957badcb6" target="_blank" rel="noopener"><span lang="tr">Modeller →</span><span lang="en">Models →</span></a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="kind"><span lang="tr">Sıfırdan LLM</span><span lang="en">LLM from scratch</span></div>
+        <h3><span lang="tr">25.7M parametrelik dil modeli, sıfırdan</span><span lang="en">A 25.7M-parameter language model, from scratch</span></h3>
+        <p>
+          <span lang="tr">GLM-5.3-Flash mimarisinden esinlenen küçük bir model; PyTorch ile sıfırdan yazıldı, sentetik Python koduyla ön eğitildi ve üç aşamada çalışan kod üretecek şekilde geliştirildi.</span>
+          <span lang="en">A small model inspired by the GLM-5.3-Flash architecture, written from scratch in PyTorch, pretrained on synthetic Python code and refined in three stages to produce code that actually runs.</span>
+        </p>
+        <div class="tags"><span>PyTorch</span><span>pretraining</span><span>transformers</span></div>
+        <div class="actions">
+          <a href="https://github.com/ayse-solmaz/glm53-flash-learning" target="_blank" rel="noopener">GitHub →</a>
+          <a href="https://huggingface.co/ayse-solmaz/glm53-flash-from-scratch" target="_blank" rel="noopener"><span lang="tr">Model →</span><span lang="en">Model →</span></a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="kind"><span lang="tr">Tarayıcıda ML</span><span lang="en">In-browser ML</span></div>
+        <h3><span lang="tr">Tarayıcıda çalışan Türkçe duygu analizi</span><span lang="en">Turkish sentiment analysis in the browser</span></h3>
+        <p>
+          <span lang="tr">Uçtan uca bir ML hattı: veri analizi → baseline → ELECTRA fine-tuning → ONNX + int8 quantization → WebGPU/WASM ile tarayıcıda çıkarım. Metin hiçbir sunucuya gitmiyor.</span>
+          <span lang="en">An end-to-end ML pipeline: EDA → baseline → ELECTRA fine-tuning → ONNX + int8 quantization → in-browser inference via WebGPU/WASM. No text ever leaves the device.</span>
+        </p>
+        <div class="tags"><span>ELECTRA</span><span>ONNX</span><span>WebGPU</span><span>quantization</span></div>
+        <div class="actions">
+          <a href="https://ayse-solmaz.github.io/turkish-sentiment-analysis/" target="_blank" rel="noopener"><span lang="tr">Canlı demo →</span><span lang="en">Live demo →</span></a>
+          <a href="https://github.com/ayse-solmaz/turkish-sentiment-analysis" target="_blank" rel="noopener">GitHub →</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="kind">MCP</div>
+        <h3><span lang="tr">gib-mcp — vergi mevzuatı için MCP sunucusu</span><span lang="en">gib-mcp — an MCP server for Turkish tax law</span></h3>
+        <p>
+          <span lang="tr">Claude gibi asistanların GİB'deki kanun, madde, tebliğ, özelge ve sirkülerleri doğrudan okuyabilmesini sağlıyor. Belgelenmemiş API uç noktalarını sitenin JS paketlerinden çözerek kuruldu.</span>
+          <span lang="en">Lets assistants like Claude read laws, articles, communiqués and rulings from the Turkish Revenue Administration directly — built by reverse-engineering the site's undocumented JSON endpoints.</span>
+        </p>
+        <div class="tags"><span>Python</span><span>MCP</span><span>reverse engineering</span></div>
+        <div class="actions">
+          <a href="https://github.com/ayse-solmaz/gib-mcp" target="_blank" rel="noopener">GitHub →</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="kind"><span lang="tr">Ajanlar</span><span lang="en">Agents</span></div>
+        <h3><span lang="tr">Çok ajanlı araştırma asistanı</span><span lang="en">Multi-agent research assistant</span></h3>
+        <p>
+          <span lang="tr">Web'de arama yapan, kaynak okuyan, kaynaklı rapor yazan ve bir "critic" ajanının geri bildirimiyle raporunu düzelten çok ajanlı bir sistem.</span>
+          <span lang="en">A multi-agent system that searches the web, reads sources, writes a cited report, and revises it based on feedback from a critic agent.</span>
+        </p>
+        <div class="tags"><span>LangChain</span><span>OpenAI</span><span>Tavily</span><span>Streamlit</span></div>
+        <div class="actions">
+          <a href="https://github.com/ayse-solmaz/multi-agent-research-system" target="_blank" rel="noopener">GitHub →</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="kind"><span lang="tr">Ürün · LLM</span><span lang="en">Product · LLM</span></div>
+        <h3>Jev Support Triage</h3>
+        <p>
+          <span lang="tr">Müşteri destek taleplerini sınıflandıran (ekip, aciliyet, iade, insan onayı gerekli mi), bu karara göre yanıt taslağı yazan ve bir sonraki adımı öneren yapay zeka aracı.</span>
+          <span lang="en">An AI support triage tool: classifies tickets (team, urgency, refund, needs human review), drafts a reply guided by that decision, and recommends the next action.</span>
+        </p>
+        <div class="tags"><span>LangChain</span><span>Groq</span><span>structured output</span></div>
+        <div class="actions">
+          <a href="https://github.com/ayse-solmaz/jev-support-triage" target="_blank" rel="noopener">GitHub →</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="kind">MLOps</div>
+        <h3><span lang="tr">Konut fiyatı tahmin sistemi</span><span lang="en">House price prediction system</span></h3>
+        <p>
+          <span lang="tr">Kaggle House Prices yarışması için ZenML + MLflow tabanlı bir pipeline: eğitim, değerlendirme ve submission adımları ayrık; model seçimi RMSLE ile.</span>
+          <span lang="en">A ZenML + MLflow pipeline for the Kaggle House Prices competition, with separate training, evaluation and submission steps and RMSLE-based model selection.</span>
+        </p>
+        <div class="tags"><span>ZenML</span><span>MLflow</span><span>scikit-learn</span><span>Kaggle</span></div>
+        <div class="actions">
+          <a href="https://github.com/ayse-solmaz/prices-predictor-system" target="_blank" rel="noopener">GitHub →</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="diger">
+    <h2><span lang="tr">Diğer işler</span><span lang="en">More work</span></h2>
+    <p class="sub"><span lang="tr">Denemeler, öğrenme projeleri ve yan işler.</span><span lang="en">Experiments, learning projects and side quests.</span></p>
+    <div class="list">
+      <a href="https://github.com/ayse-solmaz/azula" target="_blank" rel="noopener">
+        <span class="name">azula</span>
+        <span class="desc"><span lang="tr">ML ekipleri için hata ve veri kalitesi olaylarını inceleyip birden çok modelle hipotez tartıştıran AI çalışma alanı</span><span lang="en">AI workspace that investigates pipeline failures and debates hypotheses across multiple models</span></span>
+        <span class="lang">Go</span>
+      </a>
+      <a href="https://llm-monitoring-app.vercel.app" target="_blank" rel="noopener">
+        <span class="name">llm-monitoring-app</span>
+        <span class="desc"><span lang="tr">LLM çağrılarını izlemek için bir uygulama (canlı)</span><span lang="en">An app for monitoring LLM calls (live)</span></span>
+        <span class="lang">Go</span>
+      </a>
+      <a href="https://ayse-solmaz.github.io/tic-tac-toe-ai/" target="_blank" rel="noopener">
+        <span class="name">tic-tac-toe-ai</span>
+        <span class="desc"><span lang="tr">Tarayıcıda Q-learning ajanına karşı XOX; uzman modda minimax (canlı)</span><span lang="en">Tic-tac-toe against an in-browser Q-learning agent, minimax on expert (live)</span></span>
+        <span class="lang">JS</span>
+      </a>
+      <a href="https://github.com/ayse-solmaz/ai-radar" target="_blank" rel="noopener">
+        <span class="name">ai-radar</span>
+        <span class="desc"><span lang="tr">Her sabah kendini güncelleyen kişisel yapay zeka haber radarı</span><span lang="en">A personal AI news radar that rebuilds itself every morning</span></span>
+        <span class="lang">HTML</span>
+      </a>
+      <a href="https://github.com/ayse-solmaz/agentic-chatbot-aws-deploy" target="_blank" rel="noopener">
+        <span class="name">agentic-chatbot-aws-deploy</span>
+        <span class="desc"><span lang="tr">Ajan tabanlı chatbot'un Docker + GitHub Actions ile AWS EC2'ye CI/CD dağıtımı</span><span lang="en">CI/CD deployment of an agentic chatbot to AWS EC2 with Docker and GitHub Actions</span></span>
+        <span class="lang">Python</span>
+      </a>
+      <a href="https://github.com/ayse-solmaz/weather-and-search-agent" target="_blank" rel="noopener">
+        <span class="name">weather-and-search-agent</span>
+        <span class="desc"><span lang="tr">Web araması ve canlı hava durumu araçlarıyla çalışan LangChain ajanı</span><span lang="en">LangChain tool-calling agent with web search and live weather</span></span>
+        <span class="lang">Python</span>
+      </a>
+      <a href="https://github.com/ayse-solmaz/machine-learning-50-days" target="_blank" rel="noopener">
+        <span class="name">machine-learning-50-days</span>
+        <span class="desc"><span lang="tr">Python ve matematikten canlıya alınmış bir ML sistemine 50 günlük ücretsiz yol haritası</span><span lang="en">A free 50-day roadmap from Python and math to a served, monitored ML system</span></span>
+        <span class="lang">MD</span>
+      </a>
+      <a href="https://github.com/ayse-solmaz/bikes-regression" target="_blank" rel="noopener">
+        <span class="name">bikes-regression</span>
+        <span class="desc"><span lang="tr">Seul bisiklet kiralama talebini doğrusal regresyon ve sinir ağlarıyla tahmin</span><span lang="en">Predicting Seoul bike rental demand with linear regression and neural nets</span></span>
+        <span class="lang">Python</span>
+      </a>
+      <a href="https://github.com/ayse-solmaz?tab=repositories" target="_blank" rel="noopener">
+        <span class="name">+ 15</span>
+        <span class="desc"><span lang="tr">Tüm repoları GitHub'da gör</span><span lang="en">See all repositories on GitHub</span></span>
+        <span class="lang">→</span>
+      </a>
+    </div>
+  </section>
+
+  <section id="yetenekler">
+    <h2><span lang="tr">Odak alanlarım</span><span lang="en">What I focus on</span></h2>
+    <p class="sub"><span lang="tr">Kabaca, zamanımın gittiği yerler.</span><span lang="en">Roughly where my time goes.</span></p>
+    <div class="skills">
+      <div>
+        <h4><span lang="tr">Model eğitimi</span><span lang="en">Model training</span></h4>
+        <p><span lang="tr">PyTorch ile sıfırdan transformer, ön eğitim, SFT, LoRA/PEFT, quantization ve ONNX.</span><span lang="en">Transformers from scratch in PyTorch, pretraining, SFT, LoRA/PEFT, quantization and ONNX.</span></p>
+      </div>
+      <div>
+        <h4><span lang="tr">Ajanlar ve araçlar</span><span lang="en">Agents & tools</span></h4>
+        <p><span lang="tr">LangChain, çok ajanlı sistemler, MCP sunucuları, RAG ve yapılandırılmış çıktı.</span><span lang="en">LangChain, multi-agent systems, MCP servers, RAG and structured output.</span></p>
+      </div>
+      <div>
+        <h4><span lang="tr">Canlıya alma</span><span lang="en">Shipping it</span></h4>
+        <p><span lang="tr">Docker, GitHub Actions, AWS, ZenML/MLflow, Streamlit ve tarayıcıda çıkarım.</span><span lang="en">Docker, GitHub Actions, AWS, ZenML/MLflow, Streamlit and in-browser inference.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="iletisim">
+    <div class="contact">
+      <h2><span lang="tr">Birlikte bir şey yapalım</span><span lang="en">Let's build something</span></h2>
+      <p><span lang="tr">Staj, iş, açık kaynak işbirliği ya da sadece bir proje hakkında konuşmak için LinkedIn'den yazabilirsiniz.</span><span lang="en">For internships, roles, open-source collaboration, or just to talk about a project, reach out on LinkedIn.</span></p>
+      <div class="socials">
+        <a href="https://www.linkedin.com/in/ayse-solmaz" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/ayse-solmaz" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.kaggle.com/aysenursolmaz" target="_blank" rel="noopener">Kaggle</a>
+        <a href="https://huggingface.co/ayse-solmaz" target="_blank" rel="noopener">Hugging Face</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>© <span id="year">2026</span> Ayşe Nur Solmaz</footer>
+
+<script>
+  const root = document.documentElement;
+  const langBtn = document.getElementById('langBtn');
+  const themeBtn = document.getElementById('themeBtn');
+  const store = {
+    get(k) { try { return localStorage.getItem(k); } catch { return null; } },
+    set(k, v) { try { localStorage.setItem(k, v); } catch {} }
+  };
+
+  function setLang(lang) {
+    root.lang = lang;
+    langBtn.textContent = lang === 'tr' ? 'EN' : 'TR';
+    store.set('lang', lang);
+  }
+  setLang(store.get('lang') || 'tr');
+  langBtn.onclick = () => setLang(root.lang === 'tr' ? 'en' : 'tr');
+
+  const savedTheme = store.get('theme');
+  if (savedTheme) root.dataset.theme = savedTheme;
+  themeBtn.onclick = () => {
+    const dark = root.dataset.theme
+      ? root.dataset.theme === 'dark'
+      : matchMedia('(prefers-color-scheme: dark)').matches;
+    root.dataset.theme = dark ? 'light' : 'dark';
+    store.set('theme', root.dataset.theme);
+  };
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
